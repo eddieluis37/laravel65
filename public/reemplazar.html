@@ -94,10 +94,10 @@
                 axios.get(url).then(response => {
                     this.div_mensajeslug = response.data;
                     if (this.div_mensajeslug ==="Slug Disponible") {
-                        this.div_clase_slug = 'badge dadge-success';
+                        this.div_clase_slug = 'badge badge-success';
                         this.deshabilitar_boton=0;
                     }else {
-                        this.div_clase_slug = 'badge dadge-danger';
+                        this.div_clase_slug = 'badge badge-danger';
                         this.deshabilitar_boton=1;
                     }
                     this.div_aparecer = true;
