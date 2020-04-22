@@ -15,7 +15,12 @@ use App\category;
 |
 */
 
-Route::get('/', function () {
+Route::get('/admin', function () {
+    return view('admin.category.create');
+});
+
+
+
 
     /*  $prod = new Product();
 
@@ -47,7 +52,7 @@ Route::get('/', function () {
     return view('tienda.index');
 
     
-});
+
 
 Auth::routes();
 
