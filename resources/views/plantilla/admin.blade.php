@@ -748,5 +748,7 @@
 <script src="http://laravel65.test/adminlte/dist/js/adminlte.min.js"></script>
 <!-- AdminLTE for demo purposes -->
 <script src="http://laravel65.test/adminlte/dist/js/demo.js"></script>
+
+<script src="{{ asset('js/app.js') }}" defer></script>
 </body>
 </html>
