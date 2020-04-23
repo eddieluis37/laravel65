@@ -1,11 +1,17 @@
 @extends('plantilla.admin')
 
+@section('titulo', 'Crear Categoría')
+
 @section('contenido')
+
+
+
+<div id="apicategory">
 
 <!-- Default box -->
       <div class="card">
         <div class="card-header">
-          <h3 class="card-title">Prueba nueva</h3>
+          <h3 class="card-title">Administración de Categorías</h3>
 
           <div class="card-tools">
             <button type="button" class="btn btn-tool" data-card-widget="collapse" data-toggle="tooltip" title="Collapse">
@@ -15,11 +21,9 @@
           </div>
         </div>
         <div class="card-body">
-             
-                 
-        <div id="app">
+     
             <form action="">
-                <h1>Crear Categoría</h1>
+               
                 <div class="form-group">
                    <label for="nombre">Nombre</label>
                    <input v-model="nombre" 
@@ -38,32 +42,20 @@
                    <textare//a class="form-control" name="descripcion" id="descripcion" cols="30" rows="5"></textarea>
        
                 </div>
-                
-                <input 
+             
+
+        </div>
+        <!-- /.card-body -->
+        <div class="card-footer">
+                 <input 
                  :disabled = "deshabilitar_boton==1"
                  type="submit" value="Guardar" class="btn btn-primary float-right">
                  
             
             </form>
-            <br><br> 
-
-            @{{ nombre }}
-            <br>
-
-            @{{ generarSLug }}
-            <br>
-            @{{ slug }}
-        </div>
-    
-
-
-        </div>
-        <!-- /.card-body -->
-        <div class="card-footer">
-          Footer
         </div>
         <!-- /.card-footer-->
       </div>
       <!-- /.card -->
-
+    </div>
 @endsection      
