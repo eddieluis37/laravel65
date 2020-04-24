@@ -16,9 +16,10 @@ use App\category;
 */
 
 Route::get('/admin', function () {
-    return view('admin.category.create');
+    return view('plantilla.admin');
 });
 
+Route::resource('admin/category', 'Admin\AdminController')->names('admin.category');
 
 
 

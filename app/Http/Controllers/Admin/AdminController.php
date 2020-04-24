@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use App\Category;
 
 class AdminController extends Controller
 {
@@ -24,7 +25,7 @@ class AdminController extends Controller
      */
     public function create()
     {
-        //
+        return view('admin.category.create');
     }
 
     /**
@@ -35,7 +36,18 @@ class AdminController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        //return $request;
+        
+       /*  $cat = new Category();
+        $cat->nombre        = $request->nombre;
+        $cat->slug          = $request->slug;
+        $cat->description   = $request->description; 
+        $cat->save();
+
+        return $cat; */
+
+        return Category::create($request->all());
+
     }
 
     /**

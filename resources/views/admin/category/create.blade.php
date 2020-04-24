@@ -8,6 +8,9 @@
 
 <div id="apicategory">
 
+      <form action="{{ route('admin.category.store') }}" method="POST">
+      @csrf
+
 <!-- Default box -->
       <div class="card">
         <div class="card-header">
@@ -22,7 +25,7 @@
         </div>
         <div class="card-body">
      
-            <form action="">
+          
                
                 <div class="form-group">
                    <label for="nombre">Nombre</label>
@@ -39,7 +42,7 @@
                    </div>
                    <br>
                    <label for="descripcion">Descripción</label>
-                   <textare//a class="form-control" name="descripcion" id="descripcion" cols="30" rows="5"></textarea>
+                   <textarea class="form-control" name="descripcion" id="descripcion" cols="30" rows="5"></textarea>
        
                 </div>
              
@@ -52,10 +55,11 @@
                  type="submit" value="Guardar" class="btn btn-primary float-right">
                  
             
-            </form>
+            
         </div>
         <!-- /.card-footer-->
       </div>
       <!-- /.card -->
     </div>
+   </form> 
 @endsection      
