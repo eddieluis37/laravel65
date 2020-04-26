@@ -25,7 +25,7 @@ class AdminController extends Controller
      */
     public function create()
     {
-        return view('admin.category.create');
+       //return view('admin.category.create');
     }
 
     /**
@@ -36,17 +36,7 @@ class AdminController extends Controller
      */
     public function store(Request $request)
     {
-        //return $request;
         
-       /*  $cat = new Category();
-        $cat->nombre        = $request->nombre;
-        $cat->slug          = $request->slug;
-        $cat->description   = $request->description; 
-        $cat->save();
-
-        return $cat; */
-
-        return Category::create($request->all());
 
     }
 
@@ -86,24 +76,7 @@ class AdminController extends Controller
      */
     public function update(Request $request, $id)
     {
-       /*  $cat= Category::findOrFail($id);
-        $cat->nombre        = $request->nombre;
-        $cat->slug          = $request->slug;
-        $cat->description   = $request->description; 
-        $cat->save();
-
-        return $cat; */
-        
-        
-       // return $request;
-
-       $cat= Category::findOrFail($id);
-       
-       $cat->fill($request->all())->save();
-
-       return $cat;
-       
-    
+          
     
     }
 

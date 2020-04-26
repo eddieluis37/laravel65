@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use App\Category;
 
 class AdminCategoryController extends Controller
 {
@@ -24,7 +25,7 @@ class AdminCategoryController extends Controller
      */
     public function create()
     {
-        //
+        return view('admin.category.create');
     }
 
     /**
@@ -35,7 +36,15 @@ class AdminCategoryController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        /*  $cat = new Category();
+        $cat->nombre        = $request->nombre;
+        $cat->slug          = $request->slug;
+        $cat->description   = $request->description; 
+        $cat->save();
+
+        return $cat; */
+
+        return Category::create($request->all());
     }
 
     /**
@@ -55,9 +64,12 @@ class AdminCategoryController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit($slug)
     {
-        //
+        $cat= Category::where('slug', $slug)->firstOrFail();
+        $editar = 'Si';
+
+        return view('admin.category.edit',compact('cat','editar'));
     }
 
     /**
@@ -69,7 +81,23 @@ class AdminCategoryController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+         /*  $cat= Category::findOrFail($id);
+        $cat->nombre        = $request->nombre;
+        $cat->slug          = $request->slug;
+        $cat->description   = $request->description; 
+        $cat->save();
+
+        return $cat; */
+        
+        
+       // return $request;
+
+       $cat= Category::findOrFail($id);
+       
+       $cat->fill($request->all())->save();
+
+       return $cat;
+       
     }
 
     /**
