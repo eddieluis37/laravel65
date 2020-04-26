@@ -8,8 +8,14 @@
 
 <div id="apicategory">
 
-      <form action="{{ route('admin.category.store') }}" method="POST">
+      <form action="{{ route('admin.category.update',$cat->id)}}" method="POST">
       @csrf
+      @method('PUT')
+
+
+      
+     <span style="display:none;" id="editar">{{ $editar }}</span>
+     <span style="display:none;" id="nombretemp">{{ $cat->nombre }}</span>
 
 <!-- Default box -->
       <div class="card">
@@ -36,13 +42,15 @@
                    
                    class="form-control" type="text" name="nombre" id="nombre">
                    <label for="slug">Slug</label>
-                   <input readonly v-model="generarSLug"  class="form-control" type="text" name="slug" id="slug">
+                   <input readonly v-model="generarSLug"  class="form-control" type="text" 
+                   name="slug" id="slug" value="{{ $cat->slug }} ">
                    <div v-if="div_aparecer" v-bind:class="div_clase_slug">
                        @{{ div_mensajeslug }}
                    </div>
                    <br>
-                   <label for="descripcion">Descripción</label>
-                   <textarea class="form-control" name="descripcion" id="descripcion" cols="30" rows="5"></textarea>
+                   <label for="description">Descripción</label>
+                   <textarea class="form-control" name="description" id="description" 
+                   cols="30" rows="5">  {{ $cat->description }} </textarea>
        
                 </div>
              
