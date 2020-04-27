@@ -56,7 +56,7 @@ class AdminCategoryController extends Controller
      */
     public function show($id)
     {
-        //
+       
     }
 
     /**
