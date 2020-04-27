@@ -14,7 +14,7 @@
 <!-- Default box -->
       <div class="card">
         <div class="card-header">
-          <h3 class="card-title">Administración de Categorías</h3>
+          <h3 class="card-title">Administración de las Categorías</h3>
 
           <div class="card-tools">
             <button type="button" class="btn btn-tool" data-card-widget="collapse" data-toggle="tooltip" title="Collapse">
@@ -41,8 +41,8 @@
                        @{{ div_mensajeslug }}
                    </div>
                    <br>
-                   <label for="descripcion">Descripción</label>
-                   <textarea class="form-control" name="descripcion" id="descripcion" cols="30" rows="5"></textarea>
+                   <label for="description">Descripción</label>
+                   <textarea class="form-control" name="description" id="description" cols="30" rows="5"></textarea>
        
                 </div>
              

@@ -15,7 +15,8 @@ class AdminCategoryController extends Controller
      */
     public function index()
     {
-        //
+        $categorias = Category::orderBy('nombre')->paginate(3);
+        return view('admin.category.index',compact('categorias'));
     }
 
     /**
