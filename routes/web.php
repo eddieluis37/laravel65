@@ -16,18 +16,18 @@ use App\category;
 */
 
 Route::get('/admin', function () {
-    return view('plantilla.admin');
+  return view('plantilla.admin');
 });
 
 Route::resource('admin/category', 'Admin\AdminCategoryController')->names('admin.category');
 
-Route::get('cancelar/{ruta}', function($ruta) {
-   return redirect()->route('admin.category.index')->with('cancelar','Acción Cancelada');
+Route::get('cancelar/{ruta}', function ($ruta) {
+  return redirect()->route('admin.category.index')->with('cancelar', 'Acción Cancelada');
 })->name('cancelar');
 
 
 
-    /*  $prod = new Product();
+/*  $prod = new Product();
 
     $prod->nombre = 'Producto 3';
     $prod->slug = 'Producto 3';
@@ -42,21 +42,21 @@ Route::get('cancelar/{ruta}', function($ruta) {
     $prod->save(); 
 
     return $prod; */
-    
 
-    //return view('welcome');
 
-  /*   $cat = Category::find(1)->products;
+//return view('welcome');
+
+/*   $cat = Category::find(1)->products;
     
     return $cat; */
 
-    /* $prod = Product::find(4)->category;
+/* $prod = Product::find(4)->category;
     return $prod;
   */
 
-    return view('tienda.index');
+return view('tienda.index');
 
-    
+
 
 
 Auth::routes();
