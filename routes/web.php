@@ -14,6 +14,12 @@ use App\category;
 | contains the "web" middleware group. Now create something great!
 |
 */
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
 
 Route::get('/admin', function () {
   return view('plantilla.admin');
@@ -21,10 +27,11 @@ Route::get('/admin', function () {
 
 Route::resource('admin/category', 'Admin\AdminCategoryController')->names('admin.category');
 
-Route::get('cancelar/{ruta}', function ($ruta) {
-  return redirect()->route('admin.category.index')->with('cancelar', 'Acción Cancelada');
+Route::get('cancelar/{ruta}', function($ruta) {
+  return redirect()->route($ruta)->with('cancelar','Acción Cancelada!');
 })->name('cancelar');
 
+return view('tienda.index');
 
 
 /*  $prod = new Product();
@@ -54,11 +61,7 @@ Route::get('cancelar/{ruta}', function ($ruta) {
     return $prod;
   */
 
-return view('tienda.index');
 
 
 
 
-Auth::routes();
-
-Route::get('/home', 'HomeController@index')->name('home');

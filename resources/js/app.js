@@ -27,26 +27,6 @@ Vue.component('example-component', require('./components/ExampleComponent.vue').
  * or customize the JavaScript scaffolding to fit your unique needs.
  */
 
-if (document.getElementById('app')) {
-
-    const app = new Vue({
-        el: '#app',
-    })
-
-}
-
-if (document.getElementById('apicategory')) {
-    require('./apicategory');
-}
-
-if (document.getElementById('confirmareliminar')) {
-    require('./confirmareliminar');
-}
-
-
-
-
-
 const app = new Vue({
     el: '#app',
 });
